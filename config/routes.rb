@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   scope '/', module: :web, as: :web do 
     root "home#index"
     post "/", to: 'home#create'
+    post "/webhook", to: 'home#webhook'
   end
 
   scope '/admin', module: :admin, as: :admin do
