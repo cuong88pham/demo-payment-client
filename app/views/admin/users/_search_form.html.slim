@@ -1,0 +1,18 @@
+.card.mt-3
+  .card-body
+    = search_form_for @q, url: admin_users_path do |f|
+      .row.mt-3
+        .col-sm-2
+          .form-group
+            label Email
+            = f.search_field :email_cont, class: 'input-sm form-control', autofocus: true
+        .col-sm-2
+          .form-group
+            label Username
+            = f.search_field :username_cont, class: 'input-sm form-control', autofocus: true
+        
+        .col-sm-2
+          .form-group.btn-mt-4.text-right
+            = f.button class: "btn btn-primary button-p btn-block " do 
+              | Search
+              i.icon-magnifier.pl-1

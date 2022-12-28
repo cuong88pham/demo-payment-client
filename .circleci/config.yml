@@ -1,0 +1,87 @@
+  # ---
+  # version: 2
+  # jobs:
+  #   rspec:
+  #     working_directory: ~/wao_ror
+  #     docker:
+  #       - image: circleci/ruby:2.6.3-stretch-node-browsers
+  #         environment:
+  #           PGHOST: localhost
+  #           PGUSER: wao_ror
+  #           RAILS_ENV: test
+  #       - image: postgres:12.2
+  #         environment:
+  #           POSTGRES_USER: wao_ror
+  #           POSTGRES_DB: wao_ror_test
+  #           POSTGRES_PASSWORD: ""
+  #     steps:
+  #       - checkout
+
+  #       # Restore Cached Dependencies
+  #       - type: cache-restore
+  #         name: Restore bundle cache
+  #         key: wao_ror-{{ checksum "Gemfile.lock" }}
+
+  #       # Bundle install dependencies
+  #       - run: bundle install --path vendor/bundle
+
+  #       # Cache Dependencies
+  #       - type: cache-save
+  #         name: Store bundle cache
+  #         key: wao_ror-{{ checksum "Gemfile.lock" }}
+  #         paths:
+  #           - vendor/bundle
+
+  #       # Wait for DB
+  #       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+  #       # Setup the database
+  #       - run: bundle exec rake db:setup
+
+  #       # Run the tests
+  #       - run: bundle exec rspec
+
+  #   build_and_publish:
+  #     working_directory: ~/wao_ror
+  #     docker:
+  #       - image: circleci/buildpack-deps:stretch
+  #     steps:
+  #       - checkout
+  #       - setup_remote_docker
+  #       - run: docker build -t $IMAGE_NAME:latest .
+  #       - run: |
+  #           echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+  #           docker push $IMAGE_NAME:latest
+
+  #   deploy_development:
+  #     working_directory: ~/wao_ror
+  #     docker:
+  #       - image: circleci/buildpack-deps:stretch
+  #     steps:
+  #       - add_ssh_keys:
+  #           fingerprints:
+  #             - "26:61:dc:e5:76:d2:bc:01:6d:10:af:43:9c:c1:21:44"
+  #       - run: ssh-keyscan $SSH_HOST >> ~/.ssh/known_hosts
+  #       - run: ssh $SSH_USER@$SSH_HOST "./deploy.sh"
+
+  # workflows:
+  #   version: 2
+  #   test_build_and_deploy:
+  #     jobs:
+  #       - rspec:
+  #           context: org-global
+  #       - build_and_publish:
+  #           context: org-global
+  #           filters:
+  #             branches:
+  #               only: development
+  #           requires:
+  #             - rspec
+  #       - deploy_development:
+  #           context: org-global
+  #           filters:
+  #             branches:
+  #               only: development
+  #           requires:
+  #             - rspec
+  #             - build_and_publish

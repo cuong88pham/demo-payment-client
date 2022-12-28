@@ -1,0 +1,29 @@
+/! ========== Left Sidebar Start ==========
+.left.side-menu
+  #remove-scroll.slimscroll-menu
+    /! - Sidemenu
+    #sidebar-menu
+      /! Left Menu Start
+      ul#side-menu.metismenu
+        li.menu-title Menu
+        li
+          = link_to admin_root_path, class: 'waves-effect' do
+            i.icon-setting-2
+            span Dashboard
+        li
+          = link_to admin_managers_path, class: 'waves-effect' do
+            i.fa.fa-user-o
+            span Managers
+        li
+          = link_to admin_users_path, class: 'waves-effect' do
+            i.fa.fa-address-book-o
+            span Users
+        li
+          = link_to admin_users_groups_path, class: 'waves-effect' do
+            i.fa.fa-group
+            span User Groups
+       
+    /! Sidebar
+    .clearfix
+  /! Sidebar -left
+/! Left Sidebar End

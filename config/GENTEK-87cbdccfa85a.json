@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "gentek",
+  "private_key_id": "87cbdccfa85a684d3d8ec46c01ea5c68a5d3446e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCyNtFS/duZgvn1\nDxry3h/zfLmMzVeM7TJo7SkuPlc8XidUtfrU8InmYrPXObbxFc1syydYlaqiwILl\ndPFyiQxEXxaafoYnjyEEilcqS9pPyiTkauGxm2V9v5JCXXGft7Sc+WRGfGTwnekC\nTmYpbXkctHHNwKjaeA/bkxtsgBRYc3GMBnGcwo7ckCuaDrp+qGt3V3u+78NWEfcU\npXvxqAkLjbkoLg6pTWcAz9giTyhqMFcs7HcD6d/7U4zCKQFHo+DLOHcsYwMMf5KC\n4J6PUK7PpvSiQUXRO2xIhojhwapCdKwKWLF072LPYD4YPuZS1ZJ6SZ/jXvd/d4zu\naJJBnCoDAgMBAAECggEANdMDlpawR+V8e8yTnY2DxeTCH6n3Csuq4XDbcqmGbGed\nZmLN/pkldQ0Tdunp/FdS40xaNlGBp0UQY5/Vunt01oOHjqKu/uymErp7h/0/0sBh\nMxGq15rw5LFCycNyKURxCsXxyK4SSG/Q647lIRb8sLQ4+OT6unzvgSglbLgkLPAz\n7S/lWQuZErS+T4Cm/ujKydkwJ+j1w3rA73Xn3kxnQN5a2/4eI9FrJqs7BaHrsslq\nICEPwVDN7a+dHUtPFR11fA/LOrYK5p27vDE1bfVbJl+EOAcyZcwtZ0ds78Do3n/u\n0RtoT6FY/Z2Lj3qD4YGa2HTutJACBpexyvLs+zbQ+QKBgQDZP17OD91eZZGDiprp\nFAmg/J9ArsUgU1gw8Dyd9b55rVmjd4SAMV/lz3KKuEC5Tr78oxVMMC0+alzvoo6c\nNajD/GZUjuLe3S00yQldObFEfekpbsHb0ZKRGFRmH7fcfQOG4MKDIvezBImyv1Q1\n1zBy2yC/q504WnECycNsijKgCQKBgQDSAPul8Z9TyEp3WXcO0vou6A9iIKy5/OR2\nVUL8rDS1rhlXeNdqySFWEj92VngisxtBmHWeGU46LqEMTSShS9arxmQbGCVSEiyd\nc1CiiMi657xm9zWIPMNcY28sPg2zoJV9o+i+RR2yYShcD9+lXcgarIDkmIrNyLqd\nYUMD13okqwKBgQC46t/ftlFPUFUUCp7hVlT72wwTGrBgW5Dt1w9BxTNkjtGF+u2l\n0GE4U+PDgCJXmVen44j1WOyp/A8vSsbo4CPO7sCLqTQjT1BzZcu6tqjVC/ezdLs+\nSJzhNDxi0QzHeQHPhPEMfm8oyewLYiBj089BdJPjkkg494LKRMM7WEbPQQKBgQCW\n1Dnpn7bNWAeT3N/T99fUpLuXwNwN4QK9stMf4xcgfeCZoKMngTm+NfD6r3Qth/JF\nlJi1anty8ladHTL33h5a1WzEwPzdC0yb8VyywAdbpmD8mwUJyoqN6qTIY/E3WFjG\nGllpfv6rRXjVVllMziSQc+FHTgAzeL3/lwGo2rRRbQKBgQCWvWX/ayTXvlvfqidR\nMLK+SZOzntNa47L6czx2o+9iXRCyR1+nEPF0zJmo0iCPmiDV6wMvGGYZpgL+Mci7\nZbU0On6vB9gGdxT75mO97jv8swrgW6owqtPAFOg3kmf+FaHHNRtWcr5KZV4LgWTh\nbFooz4b4XHIbOkBUwAtxSijftQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "gentek-tts@gentek.iam.gserviceaccount.com",
+  "client_id": "115654638565463853785",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gentek-tts%40gentek.iam.gserviceaccount.com"
+}

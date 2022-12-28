@@ -1,0 +1,51 @@
+/! Navbar Section
+nav.navbar.navbar-expand-md.navbar-light.bg-light.fixed-top
+  .container
+    = link_to 'Crypto Exchange', web_root_path, class: 'navbar-brand'
+    
+    button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto.navbar-righ
+        li.nav-item.dropdown
+          a#navbarDropdownMenuLink.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#help"
+            | Help
+          ul.dropdown-menu aria-labelledby="navbarDropdownMenuLink"
+            li
+              a.dropdown-item href="#"  How to buy Coins
+            li
+              a.dropdown-item href="#"  FAQ
+            li
+              a.dropdown-item href="#"  Guides
+            li
+              a.dropdown-item href="#"  Fees
+            li
+              a.dropdown-item href="#"  About Us
+            li
+              a.dropdown-item href="#"  Contact Support
+        li.nav-item
+          = link_to 'Wallets', web_wallets_path, class: 'nav-link'
+        - unless current_user.present?
+          li.nav-item
+            = link_to 'SignIn', web_security_path, class: 'nav-link'
+        li.nav-item
+          a.nav-link href="#"  Advertise
+        li.nav-item
+          a.nav-link.nav-item-scale href="#"  Buy bitcoin
+        li.nav-item
+          a.nav-link.nav-item-scale href="#"
+            i.fa.fa-bell
+        -if current_user.present?
+          li.nav-item.dropdown
+            a#user.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="help"
+              = current_user.username
+            ul.dropdown-menu aria-labelledby="user"
+              li
+                = link_to 'Profile', web_user_path(current_user), class: 'dropdown-item'
+              li
+                = link_to 'Change pass', edit_user_registration_path, class: 'dropdown-item'
+              li
+                = link_to 'Change email', email_update_web_users_path, class: 'dropdown-item'
+              li
+                = link_to 'Sign out', destroy_user_session_path, method: "delete", class: 'dropdown-item'
+/! Navbar End

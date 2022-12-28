@@ -1,0 +1,44 @@
+.row
+  .col-lg-12
+    .ibox.float-e-margins
+      .ibox-content
+        .row
+          .col-lg-12.mb-3
+            = link_to new_admin_manager_path, class: "btn btn-sm btn-primary" do
+              i.fa.fa-plus.m-r-xs.pr-1
+              | New manager
+            = render 'search_form'
+        - if @managers.present?
+          .row
+            .col-sm-6
+              .m-t-lg
+                = page_entries_info @managers
+            .col-sm-6.text-right
+              = paginate @managers
+
+        .table-responsive
+          table.table.table-bordered
+            thead
+              tr
+                th ID
+                th Email
+                th Action
+            tbody
+              - @managers.each do |manager|
+                tr
+                  td = manager.id
+                  td = manager.email
+                  td
+                    = link_to admin_manager_path(manager), class: 'btn btn-sm btn-warning m-l-md' do
+                      i.fa.fa-pencil.m-r-xs
+                      | Edit
+                    = link_to admin_manager_path(manager), method: :delete, class: "btn btn-sm btn-danger m-l-md pull-right", data: {confirm: "#{ t '.delete_confirm' }"} do
+                      i.fa.fa-trash.m-r-xs
+                      | Delete
+        - if @managers.present?
+          .row
+            .col-sm-6
+              .m-t-lg
+                = page_entries_info @managers
+            .col-sm-6.text-right
+              = paginate @managers

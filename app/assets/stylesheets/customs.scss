@@ -1,0 +1,332 @@
+html * {
+  color: #000;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+body {
+  background-color: #cce2ff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 1px;
+}
+.font-weight-bold {
+  font-weight: 600 !important;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.transition {
+  transition: ease all 0.5s;
+  -webkit-transition: ease all 0.5s;
+  -moz-transition: ease all 0.5s;
+  -o-transition: ease all 0.5s;
+}
+.navbar {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.3);
+  background: #cce2ff !important;
+  .navbar-brand {
+    color: rgb(58, 58, 58);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+}
+
+.navbar-nav {
+  background-color: #cce2ff;
+  @media screen and (min-width: 1024px) {
+    li:hover ul.dropdown-menu {
+      display: block;
+    }
+  }
+
+  .dropdown-menu {
+    padding: 0;
+    li {
+      .dropdown-item {
+        color: black;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        display: block;
+        &:hover {
+          background-color: #f1f1f1;
+        }
+      }
+    }
+  }
+  .nav-item {
+    .nav-link {
+      transition: ease all 0.5s;
+      -webkit-transition: ease all 0.5s;
+      -moz-transition: ease all 0.5s;
+      -o-transition: ease all 0.5s;
+      &:hover {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -o-transform: scale(1.05);
+      }
+    }
+    .nav-item-scale {
+      font-size: 16px;
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    border: none;
+    border-radius: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    min-width: 160px;
+    z-index: 1;
+  }
+}
+
+// homepage
+.container-main {
+  padding: 100px 0 50px 0;
+}
+.hero-container {
+  margin-top: 3rem;
+}
+.home {
+  h1 {
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .sub-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 2;
+  }
+
+  .description {
+    font-size: 13px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  .client-list .multiple-items .item-border img {
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 100px;
+    opacity: 1;
+  }
+
+  .choose-coin {
+    max-width: 50px;
+  }
+
+  h3.amount {
+    font-size: 21px;
+  }
+}
+
+.home {
+  padding-bottom: 0;
+
+  h1 {
+    color: #000;
+    font-size: 1.25rem;
+  }
+
+  .hero-img {
+    height: 928px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -78px;
+
+    img {
+      max-width: 420px !important;
+    }
+  }
+
+  .client-list {
+    margin: auto;
+    padding: 1.5rem;
+
+    .multiple-items .item-border img {
+      border-radius: 4px;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      max-width: 100px;
+      opacity: 1;
+    }
+
+    .slick-control {
+      .slick-arrow {
+        font-size: 30px;
+        color: black;
+        margin: 0.5rem;
+      }
+    }
+  }
+}
+
+.hero-main-img {
+  position: relative;
+  top: 28%;
+  margin-left: 28%;
+}
+
+//wallet page
+.list-coin {
+  .owl-nav {
+    .owl-prev {
+      position: absolute !important;
+      left: -45px;
+      width: 30px;
+      height: 30px;
+      background: #000 !important;
+      top: 35%;
+      border-radius: 50%;
+    }
+    .owl-next {
+      position: absolute;
+      right: -45px;
+      width: 30px;
+      height: 30px;
+      background: #000 !important;
+      top: 35%;
+      border-radius: 50%;
+    }
+    span {
+      color: #fff;
+      font-size: 30px;
+      line-height: 30px;
+    }
+  }
+}
+.list-coin {
+  position: relative;
+
+  img {
+    max-width: 168px;
+  }
+}
+// Offer page
+.offer-content {
+  background-color: #fff;
+  border-radius: 30px;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  word-wrap: break-word;
+  max-width: 500px;
+  margin: 1rem auto;
+  .content {
+    .divider {
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.125);
+    }
+    .content-item {
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+      font-size: 1rem;
+      font-weight: 500;
+      span {
+        color: #6c97db;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+  .cta-find {
+    width: max-content;
+    a {
+      align-items: center;
+      background-color: #4d9afe;
+      border-radius: 30px;
+      color: #fff;
+      display: flex;
+      font-size: 1rem;
+      font-weight: 600;
+      justify-content: center;
+      height: 100%;
+      padding: 1.75rem;
+      text-decoration: none;
+      vertical-align: middle;
+      width: max-content;
+    }
+  }
+}
+
+// offer-buy-crypto page
+.btn-action {
+  background-color: #4e9bff;
+}
+.bg-grey {
+  background-color: #f5f5f5;
+}
+
+.offer-buy-crypto {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  .offer-buy-list {
+    .card {
+      border-radius: 20px;
+      overflow: hidden;
+    }
+  }
+  .offer-top {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 1.25rem;
+    select {
+      border: none;
+      color: blue;
+    }
+  }
+  .offer-main {
+  }
+  .offer-bottom {
+  }
+}
+
+// Responsive
+@media screen and (max-width: 1200px) {
+  .home .sub-title {
+    font-size: 1rem;
+  }
+  .home .client-list .slick-control .slick-arrow {
+    font-size: 1.25rem;
+  }
+  .offer-content .cta-find a {
+    padding: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .home .hero-img {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .hero-main-img {
+    top: 12%;
+    z-index: -1;
+  }
+}
+
+.card-primary {
+  background-color: #d9ebff;
+}

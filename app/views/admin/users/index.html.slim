@@ -1,0 +1,56 @@
+.row
+  .col-lg-12
+    .ibox.float-e-margins
+      .ibox-content
+        .row
+          .col-lg-12.mb-3
+            = link_to new_admin_user_path, class: "btn btn-sm btn-primary" do
+              i.fa.fa-plus.m-r-xs.pr-1
+              | New User
+            = render 'search_form'
+        - if @users.present?
+          .row
+            .col-sm-6
+              .m-t-lg
+                = page_entries_info @users
+            .col-sm-6.text-right
+              = paginate @users
+
+        .table-responsive
+          table.table.table-bordered
+            thead
+              tr
+                th ID
+                th Firstname
+                th Lastname
+                th Student Code
+                th Username
+                th Email
+                th Phone Number
+                th Created at
+                th Action
+            tbody
+              - @users.each do |user|
+                tr
+                  td = user.id
+                  td = user.firstname
+                  td = user.lastname
+                  td = user.student_code
+                  td = user.username
+                  td = user.email
+                  td = user.phone_number
+                  td = user.created_at
+                  td
+                    = link_to admin_user_path(user), class: 'btn btn-sm btn-warning m-l-md' do
+                      i.fa.fa-pencil.m-r-xs
+                      | Edit
+                    = link_to admin_user_path(user), method: :delete, class: "btn btn-sm btn-danger m-l-md pull-right", data: {confirm: "#{ t '.delete_confirm' }"} do
+                      i.fa.fa-trash.m-r-xs
+                      | Delete
+        - if @users.present?
+          .row
+            .col-sm-6
+              .m-t-lg
+                = page_entries_info @users
+            .col-sm-6.text-right
+              = paginate @users

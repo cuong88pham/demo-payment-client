@@ -1,0 +1,28 @@
+= simple_form_for ['admin', resource], html: {multipart: true} do |f|
+  - if resource.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(resource.errors.count, "error")} prohibited this user from being saved:"
+      ul
+        - resource.errors.full_messages.each do |message|
+          li = message
+  / .form-group
+  /   = f.input :firstname,  input_html: {class: 'input-sm'}
+  / .form-group
+  /   = f.input :lastname,  input_html: {class: 'input-sm'}
+  .form-group
+    = f.input :email,  input_html: {class: 'input-sm'}
+  / .form-group
+  /   = f.input :degree,  input_html: {class: 'input-sm'}
+  / .form-group
+  /   = f.input :bio, as: :ckeditor, input_html: {class: 'input-sm'}
+  / .form-group
+  /   = f.input :photo,  input_html: {class: 'input-sm'}
+  / .form-group
+  /   = f.input :teacher_type, collection: Teacher.teacher_types.map{|k, v| [k,k]}, input_html: {class: 'input-sm select2'}
+  .form-group
+    = f.input :password, input_html: {class: 'input-sm'}
+  .form-group
+    = f.input :password_confirmation, input_html: {class: 'input-sm'}
+  
+  .form-group
+    = f.submit class: 'btn btn-sm btn-primary'

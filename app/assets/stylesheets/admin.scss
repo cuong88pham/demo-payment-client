@@ -1,0 +1,89 @@
+/*
+ Template Name: Stexo - Responsive Bootstrap 4 Admin Dashboard
+ Author: Themesdesign
+ Website: www.themesdesign.in
+ File: Main Css File
+*/
+/* ============
+TABLES OF CSS
+---------------
+
+01. General
+02. Bootstrap-custom
+03. Helper
+04. Waves Effect
+05. Demo Only
+06. Menu
+07. Buttons
+08. Cards
+09. Email
+10. Calender
+11. Ecommerce
+12. Project
+13. Alerts
+14. Pagination
+15. Popover & Tooltip
+16. Rangeslider
+17. Sweet alert
+18. Tab & Accordion
+19. Form Elements
+20. Form Validation
+21. Form advanced
+22. Form editor
+23. Form summernote
+24. Form upload
+25. Form wizard
+26. Chart
+27. Tables
+28. widgets
+29. Maps
+30. Timeline
+31. Invoice
+32. Pricing
+33. Extra pages
+34. Account pages
+*/
+@import "bootstrap";
+@import "ionicons";
+@import "font-awesome";
+@import "admin/metismenu.min";
+@import "admin/icons";
+@import "admin/variables";
+@import "admin/general";
+@import "admin/bootstrap-custom";
+@import "admin/badge";
+@import "admin/progressbar";
+@import "admin/pagination";
+@import "admin/helper";
+@import "admin/demo-only";
+@import "admin/popover-tooltips";
+@import "admin/waves";
+@import "admin/menu";
+@import "admin/alertify";
+@import "admin/alertify";
+@import "admin/alerts";
+@import "admin/buttons";
+@import "admin/cards";
+@import "admin/nestable";
+@import "admin/range-slider";
+@import "admin/sweet-alert";
+@import "admin/form-elements";
+@import "admin/form-validation";
+@import "admin/form-advanced";
+@import "admin/form-editor";
+@import "admin/form-upload";
+@import "admin/summernote";
+@import "admin/widgets";
+@import "admin/charts";
+@import "admin/maps";
+@import "admin/tables";
+@import "admin/calendar";
+@import "admin/email";
+@import "admin/pages";
+@import "admin/timeline";
+@import "admin/pricing";
+@import 'morrisjs-rails';
+@import "select2";
+@import "select2-bootstrap";
+@import "admin/custom";
+

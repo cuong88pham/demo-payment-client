@@ -1,0 +1,3 @@
+class WebController < ApplicationController
+
+end

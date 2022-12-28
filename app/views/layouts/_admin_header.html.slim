@@ -1,0 +1,121 @@
+/! Top Bar Start
+.topbar
+  /! LOGO
+  .topbar-left
+    a.logo href="index.html"
+      span.logo-light
+        i.mdi.mdi-camera-control
+        | WaoROR
+      span.logo-sm
+        i.mdi.mdi-camera-control
+  nav.navbar-custom
+    ul.navbar-right.list-inline.float-right.mb-0
+      /! language
+      / li.dropdown.notification-list.list-inline-item.d-none.d-md-inline-block
+        a.nav-link.dropdown-toggle.arrow-none.waves-effect aria-expanded="false" aria-haspopup="false" data-toggle="dropdown" href="#" role="button"
+          = image_tag('flags/us_flag.jpg', class:'mr-2', height: 12)
+          | English
+          span.mdi.mdi-chevron-down
+        .dropdown-menu.dropdown-menu-right.dropdown-menu-animated.language-switch
+          a.dropdown-item href="#"
+            = image_tag('flags/french_flag.jpg', class: 'mr-2', height: 12)
+            span French
+          a.dropdown-item href="#"
+            = image_tag('flags/spain_flag.jpg', class: 'mr-2', height: 12)
+            span Spanish
+          a.dropdown-item href="#"
+            = image_tag('flags/russia_flag.jpg', class: 'mr-2', height: 12)
+            span Russian
+          a.dropdown-item href="#"
+            = image_tag('flags/germany_flag.jpg', class: 'mr-2', height: 12)
+            span German
+          a.dropdown-item href="#"
+            = image_tag('flags/italy_flag.jpg', class: 'mr-2', height: 12)
+            span Italian
+      /! full screen
+      li.dropdown.notification-list.list-inline-item.d-none.d-md-inline-block
+        a#btn-fullscreen.nav-link.waves-effect href="#"
+          i.mdi.mdi-arrow-expand-all.noti-icon
+      /! notification
+      / li.dropdown.notification-list.list-inline-item
+        a.nav-link.dropdown-toggle.arrow-none.waves-effect aria-expanded="false" aria-haspopup="false" data-toggle="dropdown" href="#" role="button"
+          i.mdi.mdi-bell-outline.noti-icon
+          span.badge.badge-pill.badge-danger.noti-icon-badge 3
+        .dropdown-menu.dropdown-menu-right.dropdown-menu-animated.dropdown-menu-lg.px-1
+          /! item
+          h6.dropdown-item-text
+            | Notifications
+          .slimscroll.notification-item-list
+            /! item
+            a.dropdown-item.notify-item.active href="javascript:void(0);"
+            .notify-icon.bg-success
+              i.mdi.mdi-cart-outline
+            p.notify-details
+              b Your order is placed
+              span.text-muted Dummy text of the printing and typesetting industry.
+            /! item
+            a.dropdown-item.notify-item href="javascript:void(0);"
+            .notify-icon.bg-danger
+              i.mdi.mdi-message-text-outline
+            p.notify-details
+              b New Message received
+              span.text-muted You have 87 unread messages
+            /! item
+            a.dropdown-item.notify-item href="javascript:void(0);"
+            .notify-icon.bg-info
+              i.mdi.mdi-filter-outline
+            p.notify-details
+              b Your item is shipped
+              span.text-muted It is a long established fact that a reader will
+            /! item
+            a.dropdown-item.notify-item href="javascript:void(0);"
+            .notify-icon.bg-success
+              i.mdi.mdi-message-text-outline
+            p.notify-details
+              b New Message received
+              span.text-muted You have 87 unread messages
+            /! item
+            a.dropdown-item.notify-item href="javascript:void(0);"
+            .notify-icon.bg-warning
+              i.mdi.mdi-cart-outline
+            p.notify-details
+              b Your order is placed
+              span.text-muted Dummy text of the printing and typesetting industry.
+          /! All
+          a.dropdown-item.text-center.notify-all.text-primary href="javascript:void(0);"
+            | View all
+            i.fi-arrow-right
+      li.dropdown.notification-list.list-inline-item
+        .dropdown.notification-list.nav-pro-img
+          a.dropdown-toggle.nav-link.arrow-none.nav-user aria-expanded="false" aria-haspopup="false" data-toggle="dropdown" href="#" role="button"
+            = image_tag('users/user-4.jpg', class: 'rounded-circle')
+          .dropdown-menu.dropdown-menu-right.profile-dropdown
+            /! item
+            a.dropdown-item href="#"
+              i.mdi.mdi-account-circle
+              | Profile
+            a.dropdown-item href="#"
+              i.mdi.mdi-wallet
+              | Wallet
+            a.dropdown-item.d-block href="#"
+              span.badge.badge-success.float-right 11
+              i.mdi.mdi-settings
+              | Settings
+            a.dropdown-item href="#"
+              i.mdi.mdi-lock-open-outline
+              | Lock screen
+            .dropdown-divider
+            a.dropdown-item.text-danger href="#"
+              i.mdi.mdi-power.text-danger
+              | Logout
+    ul.list-inline.menu-left.mb-0
+      li.float-left
+        button.button-menu-mobile.open-left.waves-effect
+          i.mdi.mdi-menu
+      li.d-none.d-md-inline-block
+        form.app-search role="search"
+          .form-group.mb-0
+            input.form-control placeholder="Search.." type="text" /
+            button type="submit"
+              i.fa.fa-search
+/! Top Bar End

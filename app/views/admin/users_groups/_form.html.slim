@@ -1,0 +1,21 @@
+= simple_form_for ['admin', resource], html: {multipart: true} do |f|
+  - if resource.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(resource.errors.count, "error")} prohibited this user from being saved:"
+      ul
+        - resource.errors.full_messages.each do |message|
+          li = message
+  .form-group
+    = f.input :name, input_html:{ class: 'input-sm'}
+  .form-group
+    = f.input :memo, input_html:{ class: 'input-sm'}
+  .form-group
+    = f.input :photo,  class: 'input-sm'
+  .form-group
+    = f.association :users, as: :select,collection: User.all.collect{|m| [m.email, m.id]}, input_html: { multiple: true, class: 'input-sm select2' }
+  .form-group
+    = f.association :managers, as: :select, collection: Manager.all.collect{|m| [m.email, m.id]}, input_html: { multiple: true, class: 'input-sm select2' }
+  .form-group
+    = f.input :status, collection: UsersGroup.statuses.map{|k,v| [k,k]},  input_html: {class: 'input-sm select2'}
+  .form-group
+    = f.submit class: 'btn btn-sm btn-primary'

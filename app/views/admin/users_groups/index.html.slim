@@ -1,0 +1,50 @@
+.row
+  .col-lg-12
+    .ibox.float-e-margins
+      .ibox-content
+        .row
+          .col-lg-12.mb-3
+            = link_to new_admin_users_group_path, class: "btn btn-sm btn-primary" do
+              i.fa.fa-plus.m-r-xs.pr-1
+              | New Group
+            = render 'search_form'
+        - if @users_groups.present?
+          .row
+            .col-sm-6
+              .m-t-lg
+                = page_entries_info @users_groups
+            .col-sm-6.text-right
+              = paginate @users_groups
+
+        .table-responsive
+          table.table.table-bordered
+            thead
+              tr
+                th ID
+                th Name
+                th Memo
+                th Status
+                th Created at
+                th Action
+            tbody
+              - @users_groups.each do |users_group|
+                tr
+                  td = users_group.id
+                  td = users_group.name
+                  td = users_group.memo
+                  td = users_group.status  
+                  td = users_group.created_at
+                  td
+                    = link_to admin_users_group_path(users_group), class: 'btn btn-sm btn-warning m-l-md' do
+                      i.fa.fa-pencil.m-r-xs
+                      | Edit
+                    = link_to admin_users_group_path(users_group), method: :delete, class: "btn btn-sm btn-danger m-l-md pull-right", data: {confirm: "#{ t '.delete_confirm' }"} do
+                      i.fa.fa-trash.m-r-xs
+                      | Delete
+        - if @users_groups
+          .row
+            .col-sm-6
+              .m-t-lg
+                = page_entries_info @users_groups
+            .col-sm-6.text-right
+              = paginate @users_groups

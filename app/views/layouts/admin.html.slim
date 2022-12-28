@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    meta content=("IE=edge") http-equiv="X-UA-Compatible" /
+    meta content=("width=device-width, initial-scale=1") name="viewport" /
+    meta content=("") name="description" /
+    meta content=("") name="keywords" /
+    title WaoROR Admin Panel
+    = csrf_meta_tags
+    = csp_meta_tag
+    link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet" /
+    = stylesheet_link_tag 'admin', media: 'all'
+  body
+    .wrapper
+      =render 'layouts/admin_header'
+      =render 'layouts/admin_sidebar'
+      .content-page
+        .content
+          .container-fluid
+            = render 'layouts/admin_page_title'
+            = yield
+      =render 'layouts/admin_footer'
