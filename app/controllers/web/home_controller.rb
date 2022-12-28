@@ -15,7 +15,7 @@ module Web
       })
       if @tx 
         data = AdroitPayment.call('usdt',@tx.tracking_id ,@tx.amount, @tx.sender_address)
-        @tx.payload = JSON.parse(data.body)
+        @tx.payload = data.success
         @tx.save
       end
       respond_to do |format|
