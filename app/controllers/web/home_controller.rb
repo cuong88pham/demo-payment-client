@@ -6,9 +6,10 @@ module Web
     end
     
     def webhook 
-
+      puts "WEBHOOK"
+      puts params
     end
-    
+
     def create 
       @tx = current_user.user_transactions.create({
         amount: params[:amount],
