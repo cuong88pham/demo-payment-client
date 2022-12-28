@@ -82,7 +82,7 @@ production:
   <<: *default
   database: demo-payment-production
   username: demo-payment
-  password: <%= ENV['wao_ror-DATABASE_PASSWORD'] %>
+  password: <%= ENV['demo_payment_DATABASE_PASSWORD'] %>
 
 cucumber:
   <<: *test
