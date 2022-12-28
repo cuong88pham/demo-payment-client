@@ -3,6 +3,7 @@ module Web
     before_action :authenticate_user!, except: [:webhook]
     def index 
       @transactions = current_user.user_transactions
+      @balance = @transactions.paid.sum(&:amount)
     end
     
     def webhook 

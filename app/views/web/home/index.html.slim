@@ -2,7 +2,7 @@
   .col-12
     h1.mt-5.text-center DEMO ADROIT PAYMENT GATEWAY
     h2.text-center="Hello #{current_user.username}"
-    h3.text-center="Your balance: 0 USDT"
+    h3.text-center="Your balance: #{@balance} USDT"
     = render 'form'
     #qrcode
     = render 'transactions'
