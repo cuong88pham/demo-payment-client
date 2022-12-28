@@ -14,7 +14,7 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # Needed for ExecJS
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
 
 # Libre libreoffice
@@ -26,7 +26,7 @@ RUN soffice --version
 
 # Install gems
 COPY Gemfile Gemfile.lock ./
-RUN gem install bundler -v 2.1.4 && bundle install --jobs 20 --retry 5 --without test
+RUN gem install bundler && bundle install --jobs 20 --retry 5 --without test
 
 # Copy the main application.
 COPY . ./
