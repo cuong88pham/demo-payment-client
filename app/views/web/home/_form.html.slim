@@ -1,3 +1,13 @@
-/ = form_for(url: web_path()) do |f|
-  p.text-center
-    =link_to "Deposit", "", class: 'btn btn-primary'
+
+.wrapper-page
+  .card.card-pages.shadow-none
+    .card-body
+      = form_with url: web_path do |f|
+        .form-group
+          = f.label :sender_address
+          = f.text_field :sender_address, autofocus: true, class: 'form-control'
+        .form-group
+          = f.label :Amount
+          = f.number_field :amount, autofocus: true, class: 'form-control', placeholder: 'Input your amount'
+        .form-group
+          = f.submit 'Deposit', class: 'btn btn-primary btn-block'

@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :jwt_authenticatable, jwt_revocation_strategy: JwtBlacklist
   has_and_belongs_to_many :users_groups
   has_many :performances
+  has_many :user_transactions
   mount_uploader :photo, PhotoUploader
   validates :email, :username, uniqueness: true
   validates_presence_of :username

@@ -1,0 +1,16 @@
+table.table
+  thead 
+    tr 
+      th # 
+      th Tracking ID 
+      th Amount 
+      th Status
+      th Created at
+  tbody 
+    - @transactions.each do |tx|
+      tr 
+        td= tx.id
+        td= tx.tracking_id
+        td= tx.amount
+        td= tx.status
+        td= tx.created_at

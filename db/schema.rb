@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_22_204455) do
+ActiveRecord::Schema.define(version: 2022_12_28_152632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(version: 2020_05_22_204455) do
     t.string "name", default: "", null: false
     t.string "logo", default: ""
     t.integer "status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_transactions", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "tracking_id"
+    t.string "sender_address"
+    t.float "amount"
+    t.integer "status"
+    t.json "payload"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
