@@ -1,6 +1,6 @@
 module Web
   class HomeController < WebController
-    before_action :authenticate_user!
+    before_action :authenticate_user!, except: [:webhook]
     def index 
       @transactions = current_user.user_transactions
     end
