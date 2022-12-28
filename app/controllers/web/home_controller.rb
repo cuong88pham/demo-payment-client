@@ -8,7 +8,7 @@ module Web
     def webhook 
       data = params["data"]
       tx = UserTransaction.find_by(tracking_id: data["tracking_id"])
-      tx.paid? if tx && tx.amount.to_f == data["amount"].to_f 
+      tx.paid! if tx && tx.amount.to_f == data["amount"].to_f 
       render json: {}, status: 200
     end
 
