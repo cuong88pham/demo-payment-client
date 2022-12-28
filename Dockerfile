@@ -16,14 +16,7 @@ WORKDIR /app
 # Needed for ExecJS
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
-
-# Libre libreoffice
-RUN apt-get install -y software-properties-common
-RUN add-apt-repository ppa:libreoffice/ppa
-RUN apt-get install -y --no-install-recommends libreoffice-writer
-
-RUN soffice --version
-
+RUN gem update --system 3.2.3
 # Install gems
 COPY Gemfile Gemfile.lock ./
 RUN gem install bundler && bundle install --jobs 20 --retry 5 --without test
