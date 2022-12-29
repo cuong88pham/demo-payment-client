@@ -18,7 +18,7 @@ module Web
         amount: params[:amount],
         status: 'pending',
         sender_address: params[:sender_address].downcase,
-        tracking_id: SecureRandom.hex,
+        tracking_id: "#{SecureRandom.hex}_#{current_user.username}",
         payload: {}
       })
       if @tx 
