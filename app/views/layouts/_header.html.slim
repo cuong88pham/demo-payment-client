@@ -42,7 +42,7 @@ nav.navbar.navbar-expand-md.navbar-light.bg-light.fixed-top.p-1
             = link_to 'Deposit', web_deposit_path, class: 'btn btn-primary'
         - else 
           li.nav-item
-            a.nav-link.nav-item-scale href="#"  Log in
+            = link_to 'Log in', new_user_session_path, class: 'nav-link nav-item-scale'
           li.nav-item
             = link_to 'Join now', new_user_registration_path, class: 'btn btn-warning'
             
