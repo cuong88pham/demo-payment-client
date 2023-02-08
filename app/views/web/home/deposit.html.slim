@@ -1,0 +1,31 @@
+br/
+br/
+br/
+br/
+br/
+.full-width
+  .row 
+    .col-12
+      h1 Deposit
+  .row
+    .col-2
+      .card.p-2
+        .panel
+          h2.text-left="Welcome #{current_user.username}"
+          h3.text-left="Your balance: #{@balance} USDT"
+    .col-8
+      = render 'form'
+      #qrcode
+      
+      = render 'transactions'
+    .col-2
+      .card.p-2
+        h1 
+          b Important Notice
+        ul 
+          li Always check for the latest active deposit bank details before making a deposit.
+          li For using deposit option "Bank Transfer", Please make the transfer before submit the transaction to avoid the transaction is delay.
+          li Depositor’s ACCOUNT NAME must match with registered full name. We do not encourage transaction made using 3rd party/company account.
+          li Please DO NOT fill "BK8" # or any sensitive words related to gambling as reference/remark in your online transfer transaction.
+          li Please take note that 1x turnover is required for all deposits made before any withdrawal can be processed.
+          li Kindly check with our 24/7 LIVECHAT if your transaction is pending for more than 5 minutes

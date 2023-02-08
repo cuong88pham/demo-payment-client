@@ -7,7 +7,7 @@ html * {
 }
 
 body {
-  background-color: #cce2ff;
+  background-color: #fff;
 }
 
 h1,
@@ -34,17 +34,17 @@ h6 {
   margin-bottom: 0;
   text-transform: uppercase;
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.3);
-  background: #cce2ff !important;
+  background: #fff !important;
   .navbar-brand {
     color: rgb(58, 58, 58);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     text-transform: capitalize;
   }
 }
 
 .navbar-nav {
-  background-color: #cce2ff;
+  background-color: #fff;
   @media screen and (min-width: 1024px) {
     li:hover ul.dropdown-menu {
       display: block;
@@ -71,6 +71,7 @@ h6 {
       -webkit-transition: ease all 0.5s;
       -moz-transition: ease all 0.5s;
       -o-transition: ease all 0.5s;
+      
       &:hover {
         transform: scale(1.05);
         -webkit-transform: scale(1.05);
@@ -79,7 +80,7 @@ h6 {
       }
     }
     .nav-item-scale {
-      font-size: 16px;
+      
       i {
         font-size: 20px;
       }
@@ -329,4 +330,9 @@ h6 {
 
 .card-primary {
   background-color: #d9ebff;
+}
+
+.full-width {
+  width: 1340px;
+  margin: 0 auto;
 }

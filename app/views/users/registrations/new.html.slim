@@ -1,33 +1,35 @@
-.accountbg
-.home-btn.d-none.d-sm-block
-  = link_to web_root_path, class: 'text-white' do 
-    i.fa.fa-home.fa-2x.h2
-.wrapper-page
-  .card.card-pages.shadow-none
-    .card-body
-      .text-center.m-t-0.m-b-15
-          / = link_to admin_root_path do 
-          /   = image_tag('logo-dark', height: 24)
-            / img alt="" height="24" src="assets/images/logo-dark.png" /
-      h5.font-18.text-center Sign up.
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = devise_error_messages!
-        .form-group
-          = f.label :username
-          = f.text_field :username, autofocus: true, autocomplete: "username", class: 'form-control'
-        .form-group
-          = f.label :email
-          = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
-        .form-group
-          = f.label :password
-          - if @minimum_password_length
-            em
-              | (#{@minimum_password_length} characters minimum)
-          = f.password_field :password, autocomplete: "current-password", class: 'form-control'
-        .form-group
-          = f.label :password_confirmation
-          = f.password_field :password_confirmation, autocomplete: "current-password", class: 'form-control'
-        .actions.mt-3
-          = f.submit "Sign Up", class: 'btn btn-primary btn-block'
-        .mt-3
-          = render "users/shared/links"
+br/
+br/
+br/
+br/
+.full-width
+  .wrapper-page.mt-5
+    .container-fluid  
+      .row 
+        .col-4 
+          .card-pages.shadow-none
+            .card-body
+              h3.font-24.text-left.mb-5 Create Account
+              = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+                = devise_error_messages!
+                .form-group
+                  = f.label :username
+                  = f.text_field :username, autofocus: true, autocomplete: "username", class: 'form-control'
+                .form-group
+                  = f.label :email
+                  = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+                .form-group
+                  = f.label :password
+                  - if @minimum_password_length
+                    em
+                      | (#{@minimum_password_length} characters minimum)
+                  = f.password_field :password, autocomplete: "current-password", class: 'form-control'
+                .form-group
+                  = f.label :password_confirmation
+                  = f.password_field :password_confirmation, autocomplete: "current-password", class: 'form-control'
+                .actions.mt-3
+                  = f.submit "Sign Up", class: 'btn btn-primary btn-block'
+                .mt-3
+                  = render "users/shared/links"
+        .col-8
+          = image_tag("tab7", class: 'img-fluid')

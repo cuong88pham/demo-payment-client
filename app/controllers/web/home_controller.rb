@@ -1,11 +1,18 @@
 module Web
   class HomeController < WebController
-    before_action :authenticate_user!, except: [:webhook]
+    before_action :authenticate_user!, except: [:index, :webhook]
     def index 
+      if current_user
+        @transactions = current_user.user_transactions
+        @balance = @transactions.paid.sum(&:amount)
+      end
+    end
+    
+    def deposit 
       @transactions = current_user.user_transactions
       @balance = @transactions.paid.sum(&:amount)
     end
-    
+
     def webhook 
       data = params["data"]
       tx = UserTransaction.find_by(tracking_id: data["tracking_id"])
