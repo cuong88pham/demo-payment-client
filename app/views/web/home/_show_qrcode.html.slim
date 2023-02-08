@@ -2,6 +2,8 @@ p.text-center
   =image_tag(@tx.payload["qrcode"])
 p.text-center 
   | or send to this USDT address
-.card
-  = @tx.payload["deposit_wallet"]
+.card 
+  p.text-center
+    strong
+      = @tx.payload["deposit_wallet"]
 
