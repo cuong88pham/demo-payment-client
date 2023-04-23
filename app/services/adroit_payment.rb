@@ -17,7 +17,9 @@ class AdroitPayment < ServiceBase
         amount: amount,
         sender_address: sender_address
       }
-      res = token.post("/api/v1/transactions", body: data)
+      res = token.post("/api/v2/transactions", body: data, headers: {
+        "client-id": "waotech19"
+      })
       Success(JSON.parse(res.body))
     rescue Exception => e
       msg = "[Generate Address Failed] #{@coin_id} with error(s): #{e}"
