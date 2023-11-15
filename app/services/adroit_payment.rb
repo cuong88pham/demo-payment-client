@@ -2,11 +2,10 @@
 class AdroitPayment < ServiceBase
   attr_reader :currency, :tracking_id,:amount, :sender_address
 
-  def initialize(currency, tracking_id, amount, sender_address)
+  def initialize(currency, tracking_id, amount)
     @tracking_id = tracking_id
     @currency = currency
     @amount = amount
-    @sender_address = sender_address
   end
 
   def call
@@ -14,8 +13,7 @@ class AdroitPayment < ServiceBase
       data = {
         currency: currency,
         tracking_id: tracking_id,
-        amount: amount,
-        sender_address: sender_address
+        amount: amount
       }
       res = token.post("/api/v2/transactions", body: data, headers: {
         "client-id": "waotech19"

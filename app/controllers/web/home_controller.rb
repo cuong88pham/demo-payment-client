@@ -25,15 +25,15 @@ module Web
       if pending_txs.present?
         @tx = pending_txs.last 
       else 
-        @tx = current_user.user_transactions.create({
+        @tx = current_user.user_transactions.new({
           amount: params[:amount],
           status: 'pending',
           sender_address: params[:sender_address].downcase,
           tracking_id: "#{SecureRandom.hex}_#{current_user.username}",
           payload: {}
         })
-        if @tx 
-          data = AdroitPayment.call('usdt',@tx.tracking_id ,@tx.amount, @tx.sender_address)
+        data = AdroitPayment.call('usdt',@tx.tracking_id ,@tx.amount)
+        if data.success? 
           @tx.payload = data.success
           @tx.save
         end
