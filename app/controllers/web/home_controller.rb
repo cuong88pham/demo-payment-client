@@ -28,7 +28,6 @@ module Web
         @tx = current_user.user_transactions.new({
           amount: params[:amount],
           status: 'pending',
-          sender_address: params[:sender_address].downcase,
           tracking_id: "#{SecureRandom.hex}_#{current_user.username}",
           payload: {}
         })
