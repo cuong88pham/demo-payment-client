@@ -24,6 +24,8 @@ module Web
       pending_txs = current_user.user_transactions.pending
       if pending_txs.present?
         @tx = pending_txs.last 
+        puts "----PENDING----"
+        puts @tx
       else 
         @tx = current_user.user_transactions.new({
           amount: params[:amount],
@@ -31,7 +33,10 @@ module Web
           tracking_id: "#{SecureRandom.hex}_#{current_user.username}",
           payload: {}
         })
+        
         data = AdroitPayment.call('usdt',@tx.tracking_id ,@tx.amount)
+        puts data 
+        puts @tx
         if data.success? 
           @tx.payload = data.success
           @tx.save
