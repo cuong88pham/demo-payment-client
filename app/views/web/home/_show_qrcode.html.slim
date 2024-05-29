@@ -1,9 +1,14 @@
-p.text-center
-  =image_tag(@tx.payload["data"]["qrcode"])
-p.text-center 
-  | or send to this USDT address
-.card 
+- if @tx.present?
   p.text-center
-    strong
-      = @tx.payload["data"]["deposit_wallet"]
-
+    =image_tag(@tx.payload["data"]["qrcode"])
+  p.text-center 
+    | or send to this USDT address
+  .card 
+    p.text-center
+      strong
+        = @tx.payload["data"]["deposit_wallet"]
+- else 
+  .card 
+    p.text-center
+      strong Please try again later
+        
